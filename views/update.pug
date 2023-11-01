@@ -21,13 +21,13 @@ html
         br
         form(action="/update-cobj" method="POST").form-wrapper
             .input-group
-                label pet_type Number:
-                input(type="text" onkeydown="if(event.key==='.' || event.key===','){event.preventDefault();}" min="0" max="151" maxlength="3" name="pet_type" placeholder="001")
+                label Pet Type:
+                input(type="text"  name="pet_type" placeholder="Cat")
             .input-group
                 label Name:
                 input(type="text" name="pet_name" placeholder="Sissy")
             .input-group
                 label Breed:
-                input(type="text" name="breed" placeholder="Cat")
+                input(type="text" name="breed" placeholder="Spaniel")
 
             input(type="submit" value="Update")
