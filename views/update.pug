@@ -1,0 +1,33 @@
+doctype html
+
+html
+    head
+        title=`${title}`
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+        script.
+            document.addEventListener('input', function (event) {
+                const maxLength = parseInt(event.target.getAttribute("maxlength"))
+                const newValue = ("0".repeat(maxLength) + event.target.value.toString()).slice(-maxLength);
+
+                event.target.value = newValue
+            });
+    body
+        br
+        a(href="/" style="margin-left: 20px;") Return to the homepage
+        br
+        br
+        h1.centered-heading #{title}
+        br
+        form(action="/update-cobj" method="POST").form-wrapper
+            .input-group
+                label pet_type Number:
+                input(type="text" onkeydown="if(event.key==='.' || event.key===','){event.preventDefault();}" min="0" max="151" maxlength="3" name="pet_type" placeholder="001")
+            .input-group
+                label Name:
+                input(type="text" name="pet_name" placeholder="Sissy")
+            .input-group
+                label Breed:
+                input(type="text" name="breed" placeholder="Cat")
+
+            input(type="submit" value="Update")
