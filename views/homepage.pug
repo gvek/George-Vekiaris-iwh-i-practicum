@@ -1,0 +1,24 @@
+doctype html
+html
+    head
+        title= `${title}`
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        h1 #{title}
+        br
+        a(href="/update-cobj" style="margin-left: 20px;") Add/Update this table
+        br
+        br
+        table.table-wrapper
+            thead
+                tr
+                    th.IDcolumn pet_type Number
+                    th Name
+                    th Breed
+            tbody
+                each pets in data
+                    tr
+                        td.IDcolumn.tdmidle #{pets.properties.pet_type}
+                        td #{pets.properties.pet_name}
+                        td #{pets.properties.breed}
