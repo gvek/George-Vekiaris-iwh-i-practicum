@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const axios = require('axios');
 const app = express();
@@ -63,8 +64,6 @@ app.post('/update-cobj', async (req, res) => {
         console.error(err);
     }
 });
-// Localhost
-app.listen(3000, () => console.log('Listening on http://localhost:3000'));
 
 /** 
 * * This is sample code to give you a reference for how you should structure your calls. 
